@@ -396,15 +396,15 @@ input:-webkit-autofill:active {
 
         &.is-show {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 0.5rem;
         }
 
         .c-input__validation-icon {
             --size: 1.25rem;
 
-            inline-size: var(--size);
-            block-size: var(--size);
+            min-inline-size: var(--size);
+            min-block-size: var(--size);
 
             display: inline-flex;
 
