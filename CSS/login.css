@@ -6,9 +6,7 @@ body {
 .login {
     --login-shadow: 0 0 0.9375rem 0.3125rem rgba(0, 0, 0, 0.1);
     --gap: 2rem;
-
-    inline-size: 35rem;
-
+    
     border-radius: 0.5rem;
 
     padding-block: 1.5rem;
@@ -22,11 +20,15 @@ body {
     -moz-box-shadow: var(--login-shadow);
     box-shadow: var(--login-shadow);
 
+    @media screen and (min-width: 576px) {
+        inline-size: 22rem;
+    }
+
     .login__header {
         .login__title {
             font-size: var(--fs-xl);
             font-weight: var(--fw-400);
-            
+
             text-align: center;
             color: var(--main-color-500);
         }
