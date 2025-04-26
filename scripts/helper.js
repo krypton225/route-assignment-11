@@ -5,10 +5,10 @@ const Helper = (function () {
         });
     }
 
-    function redirectToPage(pageName) {
+    function redirectToPage(pageName, time = 4000) {
         setTimeout(() => {
             window.location.href = `${pageName}`;
-        }, 4000);
+        }, time);
     }
 
     return {
