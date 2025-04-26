@@ -45,11 +45,17 @@ const Login = (function () {
             const isPasswordMatched = userObject.password === user.password;
 
             if (isEmailMatched && isPasswordMatched) {
+                setUserNameIntoLocalStorage(userObject.userName);
+
                 return true;
             } else {
                 return false;
             }
         });
+    }
+
+    function setUserNameIntoLocalStorage(userName) {
+        localStorage.setItem("current-username", userName);
     }
 
     function submitFormHandler(event) {
