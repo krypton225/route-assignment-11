@@ -7,6 +7,14 @@ const Validation = (function () {
         return isValid;
     }
 
+    function validateUserName(text = "") {
+        const REG_PATTERN = /^[a-z][a-z0-9_]{2,}$/;
+
+        const isValid = REG_PATTERN.test(text);
+
+        return isValid;
+    }
+
     function validateEmail(email = "") {
         const REG_PATTERN = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -29,6 +37,7 @@ const Validation = (function () {
 
     return {
         text: validateText,
+        userName: validateUserName,
         email: validateEmail,
         password: validatePassword,
         identical: isIdentical,
