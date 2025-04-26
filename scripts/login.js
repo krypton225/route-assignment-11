@@ -82,7 +82,7 @@ const Login = (function () {
 
             Helper.clearFormWithInputs(userEmail, userPassword);
 
-            Helper.goToPage("index.html");
+            Helper.goToPage("home.html");
         } else {
             Notify.show(NOTIFY_ID_DANGER_SOMETHING_WRONG);
 
