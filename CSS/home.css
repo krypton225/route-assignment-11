@@ -1,0 +1,119 @@
+.navbar {
+    padding-block: 0.75rem;
+    padding-inline: 2rem;
+
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: var(--neutral-50);
+
+    font-size: var(--fs-lg);
+    font-family: var(--ff);
+
+    box-shadow: var(--shadow-2);
+
+    .navbar__title {
+        font-size: var(--fs-lg);
+        font-weight: var(--fw-200);
+    }
+
+    .navbar__end {
+        padding-block: 1rem;
+        padding-inline: 1rem;
+
+        position: absolute;
+        inset-inline: 0;
+        inset-block-end: 0;
+        z-index: 3;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        visibility: hidden;
+        opacity: 0;
+
+        background-color: var(--main-color-800);
+
+        box-shadow: var(--shadow-1);
+
+        transition:
+            inset-block-end 0.35s ease-in-out,
+            visibility 0.35s ease-in-out,
+            opacity 0.35s ease-in-out;
+
+        &.is-show {
+            inset-block-end: -200%;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        @media screen and (min-width: 600px) {
+            padding: 0;
+
+            position: relative;
+
+            flex-direction: row;
+            justify-content: flex-start;
+
+            visibility: visible;
+            opacity: 1;
+
+            box-shadow: none;
+        }
+    }
+
+    .navbar__username {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .navbar__toggler {
+        border: none;
+        outline: none;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        appearance: none;
+        background-color: transparent;
+
+        cursor: pointer;
+
+        transition: rotate 0.35s ease-in-out;
+
+        @media screen and (min-width: 600px) {
+            display: none;
+        }
+    }
+}
+
+.main {
+    height: calc(100dvh - 3.8rem);
+
+    display: grid;
+    place-items: center;
+}
+
+.intro {
+    .intro__title {
+        font-size: var(--fs-2xl);
+        font-weight: var(--fw-300);
+        text-align: center;
+
+        color: var(--neutral-50);
+
+        .intro__username {
+            color: var(--success-color-300);
+        }
+    }
+}
