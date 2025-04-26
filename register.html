@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="This is for login page of the assignment!">
+    <meta name="keywords" content="HTML, CSS, JS">
+
+    <title>Register | Smart Login App</title>
+
+    <link rel="shortcut icon" href="./assets/favicons/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="./CSS/global.css">
+    <link rel="stylesheet" href="./CSS/register.css">
+
+    <script src="./scripts/helper.js" defer></script>
+    <script src="./scripts/notification.js" defer></script>
+    <script src="./scripts/validation.js" defer></script>
+    <script src="./scripts/register.js" defer></script>
+</head>
+
+<body>
+
+    <header class="box-header sr-only" id="box-header">
+        <h1>Smart Login System</h1>
+    </header>
+
+    <main class="main" id="main">
+        <div class="container">
+            <section class="box" id="box">
+                <header class="box__header">
+                    <h2 class="box__title">Smart Login System</h2>
+                </header>
+
+                <div class="box__form">
+                    <div class="c-input">
+                        <label for="user-name" class="c-input__label sr-only">
+                            <span class="c-input__label-text">ُ
+                                Enter your username here (Required)
+                            </span>
+                        </label>
+
+                        <div class="c-input__inner">
+                            <input type="text" class="c-input__field" id="user-name" value="" aria-required="true"
+                                placeholder="Enter your username" autocomplete="off" />
+                        </div>
+
+                        <div class="c-input__validation" id="username-validation">
+                            <span class="c-input__validation-icon"></span>
+
+                            <p class="c-input__validation-text">
+                                Username must have at least 3 characters, no spaces, no special characters and numbers
+                                is allowed and underscore.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="c-input">
+                        <label for="user-email" class="c-input__label sr-only">
+                            <span class="c-input__label-text">ُ
+                                Enter your email here (Required)
+                            </span>
+                        </label>
+
+                        <div class="c-input__inner">
+                            <input type="text" class="c-input__field" id="user-email" value="" aria-required="true"
+                                placeholder="Enter your email" autocomplete="off" />
+                        </div>
+
+                        <div class="c-input__validation" id="email-validation">
+                            <span class="c-input__validation-icon"></span>
+
+                            <p class="c-input__validation-text">
+                                The email must be a valid
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="c-input">
+                        <label for="user-password" class="c-input__label sr-only">
+                            <span class="c-input__label-text">ُ
+                                Enter your password here (Required)
+                            </span>
+                        </label>
+
+                        <div class="c-input__inner">
+                            <input type="password" class="c-input__field" id="user-password" value=""
+                                aria-required="true" placeholder="Enter your password" autocomplete="off" />
+                        </div>
+
+                        <div class="c-input__validation" id="password-validation">
+                            <span class="c-input__validation-icon"></span>
+
+                            <p class="c-input__validation-text">
+                                Password must have 1 number, 1 capital, 1 small and 1
+                                special character.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button type="button" id="submit-btn" class="c-button is-medium is-full is-primary"
+                        aria-label="click here to register you account" disabled>
+                        <span class="c-button__text">Register</span>
+                    </button>
+
+                    <div class="box__bottom">
+                        <p class="box__bottom__text">
+                            Do you have an account? <a href="login.html" class="box__link">sign in</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>
