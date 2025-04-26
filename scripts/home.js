@@ -27,13 +27,4 @@ const Home = (function () {
     }
 })();
 
-const Navbar = (function () {
-    const navbarTogglerButton = document.querySelector("#navbar-toggler");
-    const navbarContentEnd = document.querySelector("#navbar-content-end");
-
-    navbarTogglerButton.addEventListener("click", navbarTogglerHandler);
-
-    function navbarTogglerHandler(event) {
-        navbarContentEnd.classList.toggle("is-show");
-    }
-})();
+Navbar.init("navbar-toggler", "navbar-content-end");
