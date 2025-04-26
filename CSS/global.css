@@ -92,6 +92,7 @@
 
 :root {
     --shadow-1: 0 0 0.9375rem 0.3125rem rgba(0, 0, 0, 0.1);
+    --shadow-2: 0 0.625rem 2rem 0 rgb(0 0 0 / 18%);
 }
 
 * {
