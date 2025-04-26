@@ -15,10 +15,8 @@
     <link rel="stylesheet" href="./CSS/global.css">
     <link rel="stylesheet" href="./CSS/home.css">
 
-    <script src="./scripts/helper.js" defer></script>
-    <script src="./scripts/notification.js" defer></script>
-    <script src="./scripts/validation.js" defer></script>
-    <script src="./scripts/home.js" defer></script>
+    <script src="./scripts/navbar.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
 </head>
 
 <body>
@@ -29,26 +27,15 @@
             </div>
 
             <div class="navbar__end" id="navbar-content-end">
-                <div class="navbar__username">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <circle cx="12" cy="9" r="3" stroke="var(--neutral-50)" stroke-width="1.5"></circle>
-                            <circle cx="12" cy="12" r="10" stroke="var(--neutral-50)" stroke-width="1.5"></circle>
-                            <path
-                                d="M17.9691 20C17.81 17.1085 16.9247 15 11.9999 15C7.07521 15 6.18991 17.1085 6.03076 20"
-                                stroke="var(--neutral-50)" stroke-width="1.5" stroke-linecap="round"></path>
-                        </g>
-                    </svg>
-
-                    <span class="navbar__user" id="navbar-username"></span>
-                </div>
-
-                <button type="button" id="logout-btn" class="c-button is-medium is-danger"
+                <a href="login.html" type="button" id="login-btn" class="c-button is-medium is-primary"
                     aria-label="Click here to logout">
-                    <span class="c-button__text">Logout</span>
-                </button>
+                    <span class="c-button__text">Login</span>
+                </a>
+
+                <a href="register.html" type="button" id="logout-btn" class="c-button is-medium is-primary"
+                    aria-label="Click here to logout">
+                    <span class="c-button__text">Register</span>
+                </a>
             </div>
 
             <button type="button" id="navbar-toggler" class="navbar__toggler">
@@ -82,8 +69,7 @@
 
                 <div class="intro__content">
                     <h2 class="intro__title">
-                        Hi there! <br />
-                        Welcome back Mr. <span class="intro__username" id="intro-username"></span>.
+                        Welcome to our website!
                     </h2>
                 </div>
             </section>
