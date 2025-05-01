@@ -15,6 +15,12 @@ const Login = (function () {
 
     submitButton.addEventListener("click", submitFormHandler);
 
+    /**
+     * Handles the loading of the page.
+     * @param {Event} event - The event object that is triggered on the page load.
+     * @listens DOMContentLoaded
+     * @todo Add a better description of what this function does.
+     */
     function loadPageHandler(event) {
         Notify.create(NOTIFY_ID_SUCCESS, "success", "Account has been logged in successfully!");
         Notify.create(NOTIFY_ID_DANGER_SOMETHING_WRONG, "danger", "Something is wrong. Try again later!");
@@ -28,6 +34,10 @@ const Login = (function () {
         }
     }
 
+    /**
+     * Handles the validation of the email input.
+     * @returns {void}
+     */
     function isValidEmailHandler() {
         const REG_RESULT = Validation.email(userEmail.value);
 
@@ -39,6 +49,12 @@ const Login = (function () {
         }
     }
 
+    /**
+     * Checks if the given user is in the local storage.
+     * If the user is found, it sets the current username into the local storage.
+     * @param {Object} user - An object with email and password properties.
+     * @returns {Boolean} True if the user is found in the local storage, false otherwise.
+     */
     function isInLocalStorage(user) {
         return usersArr.find(userObject => {
             const isEmailMatched = userObject.email === user.email;
@@ -54,10 +70,25 @@ const Login = (function () {
         });
     }
 
+    /**
+     * Sets the current username into the local storage.
+     * @param {string} userName - The username that is going to be set into the local storage.
+     * @returns {undefined}
+     */
     function setUserNameIntoLocalStorage(userName) {
         localStorage.setItem("current-username", userName);
     }
 
+    /**
+     * Handles the submission of the form.
+     * If the user enters nothing, it shows a notification to enter the inputs.
+     * If the user enters an invalid email, it shows a notification to enter a valid email.
+     * If the user is found in the local storage, it shows a success notification and redirects the user to the home page.
+     * If the user is not found in the local storage, it shows an error notification.
+     * @param {Event} event - The event object that is triggered when the form is submitted.
+     * @listens submit
+     * @returns {undefined}
+     */
     function submitFormHandler(event) {
         if (userEmail.value === "" || userPassword.value === "") {
             Notify.show(NOTIFY_ID_DANGER_MUST_ENTER_INPUTS);
