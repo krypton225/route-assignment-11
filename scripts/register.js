@@ -21,6 +21,15 @@ const Register = (function () {
 
     submitButton.addEventListener("click", submitFormHandler);
 
+    /**
+     * Handles the event when the page is loaded.
+     * The function retrieves the list of users from the local storage and
+     * enables the submit button only if there are no users in the local storage.
+     * If there are users in the local storage, it sets the submit button to be
+     * disabled.
+     * @param {Event} event - The event which is triggered when the page is loaded
+     * @returns {undefined}
+     */
     function loadPageHandler(event) {
         submitButton.disabled = true;
 
@@ -33,6 +42,16 @@ const Register = (function () {
         Notify.create(NOTIFY_ID, "success", "Account has been registered successfully!");
     }
 
+    /**
+     * Handles the event when the user enters a username.
+     * The function validates the username that the user enters and
+     * shows or hides the validation text accordingly.
+     * It also calls the validateAllInputs function to check if
+     * all the inputs are valid and enables or disables the submit
+     * button accordingly.
+     * @param {Event} event - The event which is triggered when the user enters a username
+     * @returns {undefined}
+     */
     function isValidUsernameHandler(event) {
         const REG_RESULT = Validation.userName(userName.value);
 
@@ -45,6 +64,16 @@ const Register = (function () {
         validateAllInputs();
     }
 
+    /**
+     * Handles the event when the user enters an email.
+     * The function validates the email that the user enters and
+     * shows or hides the validation text accordingly.
+     * It also calls the validateAllInputs function to check if
+     * all the inputs are valid and enables or disables the submit
+     * button accordingly.
+     * @param {Event} event - The event which is triggered when the user enters an email
+     * @returns {undefined}
+     */
     function isValidEmailHandler(event) {
         const REG_RESULT = Validation.email(userEmail.value);
 
@@ -57,6 +86,16 @@ const Register = (function () {
         validateAllInputs();
     }
 
+    /**
+     * Handles the event when the user enters a password.
+     * The function validates the password that the user enters and
+     * shows or hides the validation text accordingly.
+     * It also calls the validateAllInputs function to check if
+     * all the inputs are valid and enables or disables the submit
+     * button accordingly.
+     * @param {Event} event - The event which is triggered when the user enters a password
+     * @returns {undefined}
+     */
     function isValidPasswordHandler(event) {
         const REG_RESULT = Validation.password(userPassword.value);
 
@@ -69,6 +108,11 @@ const Register = (function () {
         validateAllInputs();
     }
 
+    /**
+     * Validates all the inputs and enables or disables the submit button accordingly.
+     * @param {Event} [event] - The event which is triggered when the user enters an input
+     * @returns {undefined}
+     */
     function validateAllInputs(event) {
         const isUserNameValid = Validation.userName(userName.value);
         const isEmailValid = Validation.email(userEmail.value);
@@ -80,6 +124,15 @@ const Register = (function () {
             submitButton.disabled = true;
         }
     }
+
+    /**
+     * Handles the submission of the registration form.
+     * Captures the user input, updates the local storage with the new user,
+     * clears the form inputs, displays a success notification, and redirects
+     * to the login page.
+     * @param {Event} event - The event object that is triggered when the form is submitted.
+     * @returns {undefined}
+     */
 
     function submitFormHandler(event) {
         const user = {
@@ -99,6 +152,12 @@ const Register = (function () {
         Helper.goToPage("login.html");
     }
 
+    /**
+     * Updates the local storage with the new user.
+     * @param {Object} user - An object with userName, email, and password properties.
+     * @throws {Error} If the parameter is not an object type.
+     * @returns {undefined}
+     */
     function updateLocalStorage(user) {
         if (typeof user !== "object") {
             throw new Error("The parameter of addToLocalStorage() must be an object type");
