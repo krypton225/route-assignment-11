@@ -1,4 +1,11 @@
 const Notify = (function () {
+    /**
+     * Creates a new notification element and appends it to the body of the page.
+     * @param {string} elementID - The ID of the new notification element.
+     * @param {"success" | "danger" | "warning"} type - The type of notification to create.
+     * @param {string} [text="Notify is working!"] - The text to display in the notification.
+     * @throws {TypeError} If the type is not one of the allowed types.
+     */
     function create(elementID, type, text = "Notify is working!") {
         const TYPES = ["success", "danger", "warning"];
 
@@ -27,10 +34,19 @@ const Notify = (function () {
         document.body.insertAdjacentElement("beforeend", notifyContainer);
     }
 
+    /**
+     * Shows the notification element with the given ID.
+     * @param {string} notifyID - The ID of the notification element to show.
+     */
     function show(notifyID) {
         document.getElementById(notifyID).classList.add("is-show");
     }
 
+    /**
+     * Hides the notification element with the given ID after a specified time.
+     * @param {string} elementID - The ID of the notification element to hide.
+     * @param {number} time - The time in milliseconds to wait before hiding the notification.
+     */
     function hideAfter(elementID, time) {
         setTimeout(() => {
             document.getElementById(elementID).classList.remove("is-show");
